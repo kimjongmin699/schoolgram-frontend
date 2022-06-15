@@ -13,7 +13,6 @@ import {
 import Comments from './Comments'
 import { FatText } from '../shared'
 import Avatar from '../Avatar'
-import { FEED_QUERY } from '../../screens/Home'
 import { Link } from 'react-router-dom'
 
 const TOGGLE_LIKE_MUTATION = gql`
@@ -126,7 +125,7 @@ const Photo = ({
     }
   }
 
-  const [toggleLike, { loading }] = useMutation(TOGGLE_LIKE_MUTATION, {
+  const [toggleLike] = useMutation(TOGGLE_LIKE_MUTATION, {
     variables: {
       id,
     },

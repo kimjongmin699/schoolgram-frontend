@@ -74,9 +74,9 @@ const Item = styled.li`
 const Value = styled(FatText)`
   font-size: 18px;
 `
-const Name = styled(FatText)`
-  font-size: 18px;
-`
+// const Name = styled(FatText)`
+//   font-size: 18px;
+// `
 
 const Grid = styled.div`
   display: grid;
@@ -127,7 +127,7 @@ function Profile() {
   const { username } = useParams()
   const { data: userData } = useUser()
   const client = useApolloClient()
-  const { data, loading } = useQuery(SEE_PROFILE_QUERY, {
+  const { data } = useQuery(SEE_PROFILE_QUERY, {
     variables: {
       username,
     },
