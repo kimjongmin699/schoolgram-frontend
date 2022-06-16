@@ -88,7 +88,7 @@ function Login() {
         </span>
         <form onSubmit={handleSubmit(onValid)}>
           <Input
-            {...register('username', { required: true, minLength: 5 })}
+            {...register('username', { required: true, minLength: 2 })}
             type="text"
             placeholder="username"
           />
