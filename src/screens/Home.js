@@ -5,8 +5,8 @@ import PageTitle from '../components/PageTitle'
 import Photo from '../components/feed/Photo'
 
 export const FEED_QUERY = gql`
-  query seeFeed {
-    seeFeed {
+  query query seeFeed($offset: Int!) {
+    seeFeed(offset: $offset) {
       id
       user {
         username
@@ -35,7 +35,11 @@ export const FEED_QUERY = gql`
 const Home = () => {
   const User = useUser()
   console.log(User)
-  const { data } = useQuery(FEED_QUERY)
+  const { data } = useQuery(FEED_QUERY, {
+    variables: {
+      offset: 0,
+    },
+  })
   console.log(data)
   return (
     <div>
